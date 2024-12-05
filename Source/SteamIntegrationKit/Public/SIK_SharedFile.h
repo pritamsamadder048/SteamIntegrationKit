@@ -281,7 +281,7 @@ enum class ESMatchType : uint8 {
 
 
 UENUM(BlueprintType)
-enum ESIKAttributeType
+enum class ESIKAttributeType : uint8
 {
 	String,
 	Bool,
@@ -294,7 +294,7 @@ struct FSIKAttribute
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Steam Integration Kit")
-	TEnumAsByte<ESIKAttributeType> AttributeType = ESIKAttributeType::String;
+	ESIKAttributeType AttributeType = ESIKAttributeType::String;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Steam Integration Kit")
 	FString StringValue = "";
