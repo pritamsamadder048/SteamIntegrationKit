@@ -170,8 +170,10 @@ void USIK_MatchmakingLibrary::GetLobbyChatEntry(FSIK_SteamId SteamID, int32 Chat
 
 FString USIK_MatchmakingLibrary::GetLobbyData(FSIK_SteamId LobbyID, FString Key)
 {
+	UE_LOG(LogTemp, Log, TEXT("USIK_MatchmakingLibrary::GetLobbyData"));
 	if(!SteamMatchmaking())
 	{
+		UE_LOG(LogTemp, Error, TEXT("USIK_MatchmakingLibrary::GetLobbyData:!SteamMatchmaking()"));
 		return "";
 	}
 	return UTF8_TO_TCHAR(SteamMatchmaking()->GetLobbyData(LobbyID.GetSteamID(), TCHAR_TO_ANSI(*Key)));
